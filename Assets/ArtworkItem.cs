@@ -1,36 +1,40 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.Video;
+
+public enum PreviewType
+{
+    VideoPreview = 0,
+    ImagePreview = 1
+}
 
 public class ArtworkItem : MonoBehaviour
 {
-    [SerializeField]
-    Text m_ArtworkName;
+    public ArtworkInfoScriptableObject artworkInfo;
 
     [SerializeField]
-    Text m_ArtworkSize;
-
-    [SerializeField]
-    Text m_Description;
+    public PreviewType previewType;
 
     [SerializeField]
     private ArtworkInfoLayout m_InfoLayout;
 
-    public void ShowArworkInfoLayot()
+    [SerializeField]
+    private VideoClip m_videoClip;
+
+    public VideoClip videoClip
     {
-        
+        get => m_videoClip;
+        set => m_videoClip = value;
     }
 
-    private void Awake()
+    [SerializeField]
+    private RenderTexture m_renderTexture;
+
+    public RenderTexture renderTexture
     {
-
+        get => m_renderTexture;
+        set => m_renderTexture = value;
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
 }

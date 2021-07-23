@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4878fb0ceaf71004b97d58e95eeba547, type: 3}
+  m_Name: Auction_Info
+  m_EditorClassIdentifier: 
+  ArtworkName: '"Auction", Ruslana Nosak 2021.'
+  ArtworkSize: 'Augmented Reality/Digital Art. Printed size: 38x43cm.'
+  ArtworkDescription: "Feast at the Auction. Ladies with an ermine. A blue-blooded
+    animal served at the gourmet table. They dream of drinking its blood and want
+    to possess its skin.  Now it feeds the veins of living corpses and shines with
+    its snow-white fur, decorating the bodies of pretty ladies. Then it will become
+    a stuffed animal in the interior of high-ranking personas, leaving behind only
+    a token in the digital air Allegory to the state of art 2021.  While the intellectuals
+    decide who will get the most valuable piece of it, a creature is tortured by
+    the appraisals of its value. There will be those who will preserve the clarity
+    of mind and purity of gaze, bearing enlightenment and immortality of art. Similar
+    to Cecillia Galerani from Leonardo's \"Lady with an Ermine\", about which, after
+    seeing the picture, the poet Bernardo Bellincione (1452-1492) wrote in \"Sopra
+    il ritratto di Madonna Cecilia, qual fece Leonardo\": \"\u2026so great, so radiant
+    Cecilia's beauty, the sun looks dark, against her lovely eyes. His the portrayal,
+    yours is all the glory: we see sealed lips, imagine open ears\"."
