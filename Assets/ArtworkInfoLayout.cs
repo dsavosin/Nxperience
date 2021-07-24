@@ -18,8 +18,17 @@ public class ArtworkInfoLayout : MonoBehaviour
     [SerializeField]
     GameObject m_ArtworkView;
 
+    [SerializeField]
+    Button m_closeButton;
+
+    private Image m_Image;
     private RawImage m_RawImage;
     private VideoPlayer m_VideoPlayer;
+
+    private RectTransform m_rectTransform;
+
+    private Vector2 resetSizeDelta;
+    private Vector3 resetLocalPosition;
 
     public void showHidePanelDynamically(ArtworkItem artworkItem)
     {
@@ -63,12 +72,37 @@ public class ArtworkInfoLayout : MonoBehaviour
 
         if (artworkItem.previewType == PreviewType.ImagePreview)
         {
+            m_Image = m_ArtworkView.AddComponent<Image>();
+            if (m_Image == null)
+            {
+                Debug.LogAssertion("Image component not found.", gameObject);
+                return;
+            }
+            else
+            {
+                m_Image.sprite = artworkItem.artworkPreview;
+                m_Image.type = Image.Type.Filled;
+                m_Image.preserveAspect = true;
+                m_Image.fillMethod = Image.FillMethod.Horizontal;
 
+                float heightToWidthRatio = m_Image.sprite.rect.height / m_Image.sprite.rect.width;
+                if ( heightToWidthRatio >= 1.0f )
+                {
+                    m_rectTransform.sizeDelta = new Vector2(m_rectTransform.sizeDelta.x, m_rectTransform.sizeDelta.y * heightToWidthRatio);
+                }
+                else
+                {
+                    float yOffset = m_rectTransform.sizeDelta.y - (m_rectTransform.sizeDelta.y * heightToWidthRatio);
+                    m_rectTransform.localPosition = new Vector3(m_rectTransform.localPosition.x, m_rectTransform.localPosition.y - yOffset, m_rectTransform.localPosition.z);
+                }
+            }
         }
 
         m_ArtworkName.text = artworkItem.artworkInfo.ArtworkName;
         m_ArtworkSize.text = artworkItem.artworkInfo.ArtworkSize;
         m_ArtworkDescription.text = artworkItem.artworkInfo.ArtworkDescription;
+
+        m_closeButton.GetComponent<Image>().color = artworkItem.backButtonColor;
     }
 
     public void HidePanel()
@@ -85,8 +119,12 @@ public class ArtworkInfoLayout : MonoBehaviour
             m_ArtworkDescription.text = "Description: ";
         }
 
+        m_rectTransform.sizeDelta = resetSizeDelta;
+        m_rectTransform.localPosition = resetLocalPosition;
+
         Destroy(m_RawImage);
         Destroy(m_VideoPlayer);
+        Destroy(m_Image);
     }
 
     private void OnValidate()
@@ -108,5 +146,21 @@ public class ArtworkInfoLayout : MonoBehaviour
         {
             getCanvasGroup.alpha = 0;
         }
+
+        m_rectTransform = m_ArtworkView.GetComponent<RectTransform>();
+        if (m_rectTransform == null)
+        {
+            Debug.LogAssertion("RectTransform component not found.", gameObject);
+        }
+        else
+        {
+            resetSizeDelta = m_rectTransform.sizeDelta;
+            resetLocalPosition = m_rectTransform.localPosition;
+        }
+    }
+
+    private void Start()
+    {
+        QualitySettings.vSyncCount = 1;
     }
 }

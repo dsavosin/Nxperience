@@ -23,6 +23,9 @@ public class ArtworkItem : MonoBehaviour
     [SerializeField]
     private VideoClip m_videoClip;
 
+    [SerializeField]
+    public Color backButtonColor;
+
     public VideoClip videoClip
     {
         get => m_videoClip;
@@ -36,5 +39,14 @@ public class ArtworkItem : MonoBehaviour
     {
         get => m_renderTexture;
         set => m_renderTexture = value;
+    }
+
+    [SerializeField]
+    private Sprite m_sprite;
+
+    public Sprite artworkPreview
+    {
+        get => m_sprite;
+        set => m_sprite = value;
     }
 }

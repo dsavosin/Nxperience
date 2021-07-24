@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4878fb0ceaf71004b97d58e95eeba547, type: 3}
   m_Name: Auction_Info
   m_EditorClassIdentifier: 
-  ArtworkName: '"Auction", Ruslana Nosak 2021.'
+  ArtworkName: '"Auction"'
   ArtworkSize: 'Augmented Reality/Digital Art. Printed size: 38x43cm.'
   ArtworkDescription: "Feast at the Auction. Ladies with an ermine. A blue-blooded
     animal served at the gourmet table. They dream of drinking its blood and want
