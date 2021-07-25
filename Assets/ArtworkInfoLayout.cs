@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
+using UnityEngine.SceneManagement;
+
+public static class PersistantClass
+{ 
+    public static GameObject artworkARPrefab { get; set; }
+    public static string testString { get; set; }
+}
 
 public class ArtworkInfoLayout : MonoBehaviour
 {
@@ -24,7 +31,7 @@ public class ArtworkInfoLayout : MonoBehaviour
     private Image m_Image;
     private RawImage m_RawImage;
     private VideoPlayer m_VideoPlayer;
-
+    private ArtworkItem m_artworkItem;
     private RectTransform m_rectTransform;
 
     private Vector2 resetSizeDelta;
@@ -98,6 +105,7 @@ public class ArtworkInfoLayout : MonoBehaviour
             }
         }
 
+        m_artworkItem = artworkItem;
         m_ArtworkName.text = artworkItem.artworkInfo.ArtworkName;
         m_ArtworkSize.text = artworkItem.artworkInfo.ArtworkSize;
         m_ArtworkDescription.text = artworkItem.artworkInfo.ArtworkDescription;
@@ -125,6 +133,14 @@ public class ArtworkInfoLayout : MonoBehaviour
         Destroy(m_RawImage);
         Destroy(m_VideoPlayer);
         Destroy(m_Image);
+    }
+
+
+    public void StartAR()
+    {
+        PersistantClass.testString = "Loaded Artwork in AR";
+        PersistantClass.artworkARPrefab = m_artworkItem.placedARPrefab;
+        SceneManager.LoadScene("UXManagerScene");
     }
 
     private void OnValidate()

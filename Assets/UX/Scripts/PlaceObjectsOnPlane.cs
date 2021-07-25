@@ -20,10 +20,23 @@ public class PlaceObjectsOnPlane : MonoBehaviour
         set { m_PlacedPrefab = value; }
     }
 
+    [SerializeField]
+    GameObject m_PreviewPrefab;
+
+    public GameObject previewPrefab
+    {
+        get { return m_PreviewPrefab; }
+        set { m_PreviewPrefab = value; }
+    }
+
+
     /// <summary>
     /// The object instantiated as a result of a successful raycast intersection with a plane.
     /// </summary>
     public GameObject spawnedObject { get; private set; }
+
+
+    public GameObject spawnedPreview { get; private set; }
 
     /// <summary>
     /// Invoked whenever an object is placed in on a plane.
@@ -51,38 +64,53 @@ public class PlaceObjectsOnPlane : MonoBehaviour
     void Awake()
     {
         m_RaycastManager = GetComponent<ARRaycastManager>();
+        placedPrefab = PersistantClass.artworkARPrefab;
+        Debug.Log(placedPrefab.name);
+    }
+
+    private void Start()
+    {
+        Debug.Log(PersistantClass.testString);
     }
 
     void Update()
     {
+        if (spawnedObject == null && m_RaycastManager.Raycast(Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0)), s_Hits, TrackableType.PlaneWithinPolygon))
+        {
+            Pose hitPose = s_Hits[0].pose;
+
+            if ( spawnedPreview == null )
+            {
+                spawnedPreview = Instantiate(m_PreviewPrefab, hitPose.position, hitPose.rotation);
+            }
+            else
+            {
+                spawnedPreview.transform.SetPositionAndRotation(hitPose.position, hitPose.rotation);
+            }
+        }
+
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
 
-            if (touch.phase == TouchPhase.Began)
+            if (touch.phase == TouchPhase.Began && spawnedPreview != null)
             {
-                if (m_RaycastManager.Raycast(touch.position, s_Hits, TrackableType.PlaneWithinPolygon))
+                if (m_NumberOfPlacedObjects < m_MaxNumberOfObjectsToPlace)
                 {
-                    Pose hitPose = s_Hits[0].pose;
+                    spawnedObject = Instantiate(m_PlacedPrefab, spawnedPreview.transform.position, spawnedPreview.transform.rotation);
+                    m_NumberOfPlacedObjects++;
+                    spawnedPreview.SetActive(false);
 
-                    if (m_NumberOfPlacedObjects < m_MaxNumberOfObjectsToPlace)
-                    {
-                        spawnedObject = Instantiate(m_PlacedPrefab, hitPose.position, hitPose.rotation);
-                        
-                        m_NumberOfPlacedObjects++;
-                    }
-                    else
-                    {
-                        if (m_CanReposition)
-                        {
-                            spawnedObject.transform.SetPositionAndRotation(hitPose.position, hitPose.rotation);
-                        }
-                    }
-                    
                     if (onPlacedObject != null)
                     {
                         onPlacedObject();
                     }
+                }
+
+                if (m_CanReposition && m_RaycastManager.Raycast(touch.position, s_Hits, TrackableType.PlaneWithinPolygon))
+                {
+                    Pose hitPose = s_Hits[0].pose;
+                    spawnedObject.transform.SetPositionAndRotation(hitPose.position, hitPose.rotation);
                 }
             }
         }

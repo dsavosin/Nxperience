@@ -15,7 +15,16 @@ public class ArtworkItem : MonoBehaviour
     public ArtworkInfoScriptableObject artworkInfo;
 
     [SerializeField]
-    public PreviewType previewType;
+    public GameObject m_placedARPRefab;
+    public GameObject placedARPrefab
+    {
+        get => m_placedARPRefab;
+        set => m_placedARPRefab = value;
+    }
+
+
+    [SerializeField]
+    public PreviewType previewType = PreviewType.ImagePreview;
 
     [SerializeField]
     private ArtworkInfoLayout m_InfoLayout;
