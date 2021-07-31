@@ -193,9 +193,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0.000013351, y: 76}
-  m_SizeDelta: {x: 846.8652, y: 170}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 850, y: 196.3306}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &33648528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,14 +209,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.2784314, g: 0.2784314, b: 0.2784314, a: 0.98039216}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 73f10f28e3606874cae9b9d64fe3a428, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e371507ff728207428c961c05f9446b0, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2094,7 +2094,7 @@ PrefabInstance:
     - target: {fileID: 5755413837025088023, guid: ea170240948f8c8478486b3a8e185885,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5755413837025088023, guid: ea170240948f8c8478486b3a8e185885,
         type: 3}
@@ -2104,7 +2104,7 @@ PrefabInstance:
     - target: {fileID: 5755413837025088023, guid: ea170240948f8c8478486b3a8e185885,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5755413837025088023, guid: ea170240948f8c8478486b3a8e185885,
         type: 3}
@@ -2154,12 +2154,12 @@ PrefabInstance:
     - target: {fileID: 5755413837025088023, guid: ea170240948f8c8478486b3a8e185885,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 411.3802
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5755413837025088023, guid: ea170240948f8c8478486b3a8e185885,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -115
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5755413837025088023, guid: ea170240948f8c8478486b3a8e185885,
         type: 3}
@@ -2356,7 +2356,7 @@ PrefabInstance:
     - target: {fileID: 5755413837025088023, guid: ea170240948f8c8478486b3a8e185885,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5755413837025088023, guid: ea170240948f8c8478486b3a8e185885,
         type: 3}
@@ -2366,7 +2366,7 @@ PrefabInstance:
     - target: {fileID: 5755413837025088023, guid: ea170240948f8c8478486b3a8e185885,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5755413837025088023, guid: ea170240948f8c8478486b3a8e185885,
         type: 3}
@@ -2416,12 +2416,12 @@ PrefabInstance:
     - target: {fileID: 5755413837025088023, guid: ea170240948f8c8478486b3a8e185885,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 666.2604
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5755413837025088023, guid: ea170240948f8c8478486b3a8e185885,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -115
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5755413837025088023, guid: ea170240948f8c8478486b3a8e185885,
         type: 3}
@@ -2646,7 +2646,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 252636428}
         m_TargetAssemblyTypeName: ArtworkInfoLayout, Assembly-CSharp
-        m_MethodName: showHidePanelDynamically
+        m_MethodName: ShowPanel
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1491100155}
@@ -2669,7 +2669,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   artworkInfo: {fileID: 11400000, guid: a0849f3d4d173a540a6ff3609f348411, type: 2}
-  m_placedARPRefab: {fileID: 8590947110017181543, guid: 87729abd30bc5aa479794a71fa032ffa,
+  m_placedARPRefab: {fileID: 2137413746675003559, guid: 26bd913a9bb63c74cb175a6e156f18b0,
     type: 3}
   previewType: 1
   m_InfoLayout: {fileID: 252636428}
@@ -3014,7 +3014,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3300,7 +3300,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 252636428}
         m_TargetAssemblyTypeName: ArtworkInfoLayout, Assembly-CSharp
-        m_MethodName: showHidePanelDynamically
+        m_MethodName: ShowPanel
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1676213653}
@@ -3454,7 +3454,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 252636428}
         m_TargetAssemblyTypeName: ArtworkInfoLayout, Assembly-CSharp
-        m_MethodName: showHidePanelDynamically
+        m_MethodName: ShowPanel
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1690025847}
@@ -3477,7 +3477,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   artworkInfo: {fileID: 11400000, guid: 2f4c0741500e1524fbc7c69d4226fb7d, type: 2}
-  m_placedARPRefab: {fileID: 8590947110017181543, guid: 007f5d8f29652534297cccb3a05e058a,
+  m_placedARPRefab: {fileID: 2123188437091266043, guid: 17b25d12db0e964469c0262cd96c189b,
     type: 3}
   previewType: 1
   m_InfoLayout: {fileID: 252636428}
@@ -3613,7 +3613,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   artworkInfo: {fileID: 11400000, guid: a0849f3d4d173a540a6ff3609f348411, type: 2}
-  m_placedARPRefab: {fileID: 0}
+  m_placedARPRefab: {fileID: 6419981296610968239, guid: a6fed092691579e4aa1e3fecbb56200b,
+    type: 3}
   previewType: 0
   m_InfoLayout: {fileID: 252636428}
   m_videoClip: {fileID: 32900000, guid: 671ccc1c945f694499963e8a8d26d92a, type: 3}
@@ -3666,7 +3667,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 252636428}
         m_TargetAssemblyTypeName: ArtworkInfoLayout, Assembly-CSharp
-        m_MethodName: showHidePanelDynamically
+        m_MethodName: ShowPanel
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1717728918}
@@ -4254,7 +4255,7 @@ PrefabInstance:
     - target: {fileID: 5755413837025088023, guid: ea170240948f8c8478486b3a8e185885,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5755413837025088023, guid: ea170240948f8c8478486b3a8e185885,
         type: 3}
@@ -4264,7 +4265,7 @@ PrefabInstance:
     - target: {fileID: 5755413837025088023, guid: ea170240948f8c8478486b3a8e185885,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5755413837025088023, guid: ea170240948f8c8478486b3a8e185885,
         type: 3}
@@ -4314,12 +4315,12 @@ PrefabInstance:
     - target: {fileID: 5755413837025088023, guid: ea170240948f8c8478486b3a8e185885,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 156.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5755413837025088023, guid: ea170240948f8c8478486b3a8e185885,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -115
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5755413837025088023, guid: ea170240948f8c8478486b3a8e185885,
         type: 3}

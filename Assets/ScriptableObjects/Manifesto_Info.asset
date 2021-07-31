@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4878fb0ceaf71004b97d58e95eeba547, type: 3}
+  m_Name: Manifesto_Info
+  m_EditorClassIdentifier: 
+  ArtworkName: '"Manifesto of Freedom"'
+  ArtworkSize: "110\u0445140\u0441\u043C. Oil on canvas, acrylic, pencil."
+  ArtworkDescription: The hand and the bird are symbols of the freedom of the physical,
+    spiritual and mind body. But what happens if you catch the bird in the palm of
+    your hand? The clash of freedoms. And who is free then? A person lives his day
+    looking at the world through the prism of personal perception. And every day
+    he runs the risk of becoming the "analogous goat of yesterday" under the wheels
+    of the "machine of the future", which is rapidly moving forward. He is free to
+    choose the path of development.
