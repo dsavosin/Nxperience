@@ -157,8 +157,6 @@ public class ArtworkInfoLayout : MonoBehaviour
 
     private void Awake()
     {
-        QualitySettings.vSyncCount = 0;
-
         CanvasGroup getCanvasGroup = GetComponent<CanvasGroup>();
         if( getCanvasGroup == null)
         {

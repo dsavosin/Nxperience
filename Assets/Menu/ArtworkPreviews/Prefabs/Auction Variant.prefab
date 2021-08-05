@@ -55,11 +55,61 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 2535666735285025691, guid: a66a2a238286a2e489398ac24a9c8fef,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535666735285025691, guid: a66a2a238286a2e489398ac24a9c8fef,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6461232848698720952, guid: a66a2a238286a2e489398ac24a9c8fef,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: cea6e500b9f6a73498f2894349604a2d, type: 2}
+    - target: {fileID: 8590947109377212090, guid: a66a2a238286a2e489398ac24a9c8fef,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8590947109377212092, guid: a66a2a238286a2e489398ac24a9c8fef,
+        type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8590947109377212092, guid: a66a2a238286a2e489398ac24a9c8fef,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8590947109377212092, guid: a66a2a238286a2e489398ac24a9c8fef,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8590947109377212092, guid: a66a2a238286a2e489398ac24a9c8fef,
+        type: 3}
+      propertyPath: m_SpotAngle
+      value: 48.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8590947109377212092, guid: a66a2a238286a2e489398ac24a9c8fef,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8590947109377212092, guid: a66a2a238286a2e489398ac24a9c8fef,
+        type: 3}
+      propertyPath: m_InnerSpotAngle
+      value: 15.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8590947109377212092, guid: a66a2a238286a2e489398ac24a9c8fef,
+        type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8590947110017181542, guid: a66a2a238286a2e489398ac24a9c8fef,
         type: 3}
       propertyPath: m_RootOrder
