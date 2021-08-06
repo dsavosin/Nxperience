@@ -170,7 +170,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Auction Variant
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8630981732002755609, guid: a66a2a238286a2e489398ac24a9c8fef, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a66a2a238286a2e489398ac24a9c8fef, type: 3}
 --- !u!1 &6419981296610968239 stripped
 GameObject:
