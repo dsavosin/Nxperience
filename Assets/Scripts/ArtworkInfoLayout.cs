@@ -147,6 +147,11 @@ public class ArtworkInfoLayout : MonoBehaviour
         SceneManager.LoadScene("UXManagerScene");
     }
 
+    public void LaunchOnSiteAR()
+    {
+        SceneManager.LoadScene("ImageTracking");
+    }
+
     private void OnValidate()
     {
         Debug.Assert(m_ArtworkView != null, "ArtworkView is not valid gameObject");
