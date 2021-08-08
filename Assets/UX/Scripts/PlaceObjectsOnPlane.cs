@@ -77,8 +77,9 @@ public class PlaceObjectsOnPlane : MonoBehaviour
 
     void Update()
     {
-        if (spawnedObject == null && m_RaycastManager.Raycast(Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0)), s_Hits, TrackableType.PlaneWithinPolygon))
+        if (spawnedObject == null)
         {
+            m_RaycastManager.Raycast(Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0)), s_Hits, TrackableType.PlaneWithinPolygon);
             Pose hitPose = s_Hits[0].pose;
 
             if ( spawnedPreview == null )
@@ -99,13 +100,15 @@ public class PlaceObjectsOnPlane : MonoBehaviour
             {
                 if (m_NumberOfPlacedObjects < m_MaxNumberOfObjectsToPlace)
                 {
-                    spawnedObject = Instantiate(m_PlacedPrefab, spawnedPreview.transform.position, spawnedPreview.transform.rotation);
+                    m_RaycastManager.Raycast(Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0)), s_Hits, TrackableType.PlaneWithinPolygon);
+                    Pose hitPose = s_Hits[0].pose;
 
-                    if (m_PlaneManager.GetPlane(s_Hits[0].trackableId).alignment.IsVertical())
-                    {
-                        spawnedObject.transform.Rotate(Vector3.right, 90.0f);
-                    }
+                    //Vector3 relativePos = Camera.main.transform.position - spawnedObject.transform.position;
+                    //Quaternion lookRotation = Quaternion.LookRotation(relativePos, Vector3.up);
+                    Debug.Log(hitPose.rotation);
 
+                    spawnedObject = Instantiate(m_PlacedPrefab, hitPose.position, hitPose.rotation);
+                    
                     m_NumberOfPlacedObjects++;
                     spawnedPreview.SetActive(false);
 
