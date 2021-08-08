@@ -44,6 +44,7 @@ public class PlaceObjectsOnPlane : MonoBehaviour
     public static event Action onPlacedObject;
 
     ARRaycastManager m_RaycastManager;
+    ARPlaneManager m_PlaneManager;
 
     static List<ARRaycastHit> s_Hits = new List<ARRaycastHit>();
     
@@ -64,6 +65,7 @@ public class PlaceObjectsOnPlane : MonoBehaviour
     void Awake()
     {
         m_RaycastManager = GetComponent<ARRaycastManager>();
+        m_PlaneManager = GetComponent<ARPlaneManager>();
         placedPrefab = PersistantClass.artworkARPrefab;
         Debug.Log(placedPrefab.name);
     }
@@ -98,6 +100,12 @@ public class PlaceObjectsOnPlane : MonoBehaviour
                 if (m_NumberOfPlacedObjects < m_MaxNumberOfObjectsToPlace)
                 {
                     spawnedObject = Instantiate(m_PlacedPrefab, spawnedPreview.transform.position, spawnedPreview.transform.rotation);
+
+                    if (m_PlaneManager.GetPlane(s_Hits[0].trackableId).alignment.IsVertical())
+                    {
+                        spawnedObject.transform.Rotate(Vector3.right, 90.0f);
+                    }
+
                     m_NumberOfPlacedObjects++;
                     spawnedPreview.SetActive(false);
 

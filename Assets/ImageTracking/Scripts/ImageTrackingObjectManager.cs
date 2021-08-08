@@ -81,8 +81,8 @@ public class ImageTrackingObjectManager : MonoBehaviour
 
     int m_NumberOfTrackedImages;
     
-    NumberManager m_OneNumberManager;
-    NumberManager m_TwoNumberManager;
+    VideoOverlayManager m_VideoOverlayManagerOne;
+    VideoOverlayManager m_VideoOverlayManagerTwo;
 
     static Guid s_FirstImageGUID;
     static Guid s_SecondImageGUID;
@@ -108,12 +108,12 @@ public class ImageTrackingObjectManager : MonoBehaviour
             if (image.referenceImage.guid == s_FirstImageGUID)
             {
                 m_SpawnedOnePrefab = Instantiate(m_OnePrefab, image.transform.position, image.transform.rotation);
-                m_OneNumberManager = m_SpawnedOnePrefab.GetComponent<NumberManager>();
+                m_VideoOverlayManagerOne = m_SpawnedOnePrefab.GetComponent<VideoOverlayManager>();
             }
             else if (image.referenceImage.guid == s_SecondImageGUID)
             {
                 m_SpawnedTwoPrefab = Instantiate(m_TwoPrefab, image.transform.position, image.transform.rotation);
-                m_TwoNumberManager = m_SpawnedTwoPrefab.GetComponent<NumberManager>();
+                m_VideoOverlayManagerTwo = m_SpawnedTwoPrefab.GetComponent<VideoOverlayManager>();
             }
         }
         
@@ -125,12 +125,12 @@ public class ImageTrackingObjectManager : MonoBehaviour
             {
                 if (image.referenceImage.guid == s_FirstImageGUID)
                 {
-                    m_OneNumberManager.Enable3DNumber(true);
+                    m_VideoOverlayManagerOne.EnableVideoSurface(true);
                     m_SpawnedOnePrefab.transform.SetPositionAndRotation(image.transform.position, image.transform.rotation);
                 }
                 else if (image.referenceImage.guid == s_SecondImageGUID)
                 {
-                    m_TwoNumberManager.Enable3DNumber(true);
+                    m_VideoOverlayManagerTwo.EnableVideoSurface(true);
                     m_SpawnedTwoPrefab.transform.SetPositionAndRotation(image.transform.position, image.transform.rotation);
                 }
             }
@@ -139,11 +139,11 @@ public class ImageTrackingObjectManager : MonoBehaviour
             {
                 if (image.referenceImage.guid == s_FirstImageGUID)
                 {
-                    m_OneNumberManager.Enable3DNumber(false);
+                    m_VideoOverlayManagerOne.EnableVideoSurface(false);
                 }
                 else if (image.referenceImage.guid == s_SecondImageGUID)
                 {
-                    m_TwoNumberManager.Enable3DNumber(false);
+                    m_VideoOverlayManagerTwo.EnableVideoSurface(false);
                 }
             }
         }

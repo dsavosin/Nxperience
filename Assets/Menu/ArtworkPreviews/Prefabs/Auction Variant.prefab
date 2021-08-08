@@ -12,11 +12,11 @@ VideoPlayer:
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
-  m_TargetTexture: {fileID: 0}
+  m_TargetTexture: {fileID: 8400000, guid: a33c9c983f8dc9147b258d705295c3af, type: 2}
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 8614153613081438064}
   m_TargetMaterialProperty: _MainTex
-  m_RenderMode: 3
+  m_RenderMode: 2
   m_AspectRatio: 2
   m_DataSource: 0
   m_PlaybackSpeed: 1
@@ -84,7 +84,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: cea6e500b9f6a73498f2894349604a2d, type: 2}
+      objectReference: {fileID: 2100000, guid: ba414000767b36d43b695b0d2078f93d, type: 2}
     - target: {fileID: 8590947109377212090, guid: a66a2a238286a2e489398ac24a9c8fef,
         type: 3}
       propertyPath: m_IsActive
