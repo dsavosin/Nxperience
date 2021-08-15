@@ -354,7 +354,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Goal: 3
-  m_ActivatesAutomatically: 1
+  m_ActivatesAutomatically: 0
 --- !u!114 &427002222
 MonoBehaviour:
   m_ObjectHideFlags: 0

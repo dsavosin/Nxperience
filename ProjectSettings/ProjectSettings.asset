@@ -40,7 +40,8 @@ PlayerSettings:
     width: 1
     height: 1
   m_SplashScreenLogos: []
-  m_VirtualRealitySplashScreen: {fileID: 0}
+  m_VirtualRealitySplashScreen: {fileID: 2800000, guid: bbe92f396664d7c48af06fab8785038f,
+    type: 3}
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1024
   defaultScreenHeight: 768
@@ -129,7 +130,9 @@ PlayerSettings:
     Others: 1
   bundleVersion: 1.0
   preloadedAssets:
-  - {fileID: 11400000, guid: 6f7fbab671a5848ddae17e25cb330888, type: 2}
+  - {fileID: 0}
+  - {fileID: 207803842820362116, guid: 0c7320f37e3f8b24c9e5b5fd999e40e0, type: 2}
+  - {fileID: 4800000, guid: c9f956787b1d945e7b36e0516201fc76, type: 3}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -239,7 +242,7 @@ PlayerSettings:
   useCustomProguardFile: 0
   AndroidTargetArchitectures: 2
   AndroidSplashScreenScale: 2
-  androidSplashScreen: {fileID: 2800000, guid: d61180c3fb4ddd54781e6de3fca03eec, type: 3}
+  androidSplashScreen: {fileID: 0}
   AndroidKeystoreName: 
   AndroidKeyaliasName: 
   AndroidBuildApkPerCpuArchitecture: 0
@@ -786,7 +789,7 @@ PlayerSettings:
   ps4IncludedModules: []
   ps4attribVROutputEnabled: 0
   monoEnv: 
-  splashScreenBackgroundSourceLandscape: {fileID: 21300000, guid: d61180c3fb4ddd54781e6de3fca03eec,
+  splashScreenBackgroundSourceLandscape: {fileID: 21300000, guid: bbe92f396664d7c48af06fab8785038f,
     type: 3}
   splashScreenBackgroundSourcePortrait: {fileID: 21300000, guid: d61180c3fb4ddd54781e6de3fca03eec,
     type: 3}

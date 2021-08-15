@@ -379,7 +379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Goal: 0
-  m_ActivatesAutomatically: 1
+  m_ActivatesAutomatically: 0
 --- !u!1 &1015722065
 GameObject:
   m_ObjectHideFlags: 0
