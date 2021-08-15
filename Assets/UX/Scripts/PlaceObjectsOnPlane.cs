@@ -21,21 +21,26 @@ public class PlaceObjectsOnPlane : MonoBehaviour
     }
 
     [SerializeField]
+    [Tooltip("Instantiates this prefab on a plane at the raycast location.")]
     GameObject m_PreviewPrefab;
 
+    /// <summary>
+    /// The prefab to instantiate when successful raycast agains plane.
+    /// </summary>
     public GameObject previewPrefab
     {
         get { return m_PreviewPrefab; }
         set { m_PreviewPrefab = value; }
     }
 
-
     /// <summary>
     /// The object instantiated as a result of a successful raycast intersection with a plane.
     /// </summary>
     public GameObject spawnedObject { get; private set; }
 
-
+    /// <summary>
+    /// The preview-object instantiated as a result of a successful raycast intersection with a plane.
+    /// </summary>
     public GameObject spawnedPreview { get; private set; }
 
     /// <summary>
@@ -92,37 +97,45 @@ public class PlaceObjectsOnPlane : MonoBehaviour
             }
         }
 
-        if (Input.touchCount > 0)
+        if (Input.touchCount == 0)
         {
-            Touch touch = Input.GetTouch(0);
+            return;
+        }
 
-            if (touch.phase == TouchPhase.Began && spawnedPreview != null)
+        Touch touch = Input.GetTouch(0);
+        if (touch.phase == TouchPhase.Began && spawnedPreview != null)
+        {
+            if (m_NumberOfPlacedObjects < m_MaxNumberOfObjectsToPlace)
             {
-                if (m_NumberOfPlacedObjects < m_MaxNumberOfObjectsToPlace)
+                m_RaycastManager.Raycast(Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0)), s_Hits, TrackableType.PlaneWithinPolygon);
+                Pose hitPose = s_Hits[0].pose;
+                ARPlane plane = m_PlaneManager.GetPlane(s_Hits[0].trackableId);
+                
+                if(plane.alignment.IsHorizontal())
                 {
-                    m_RaycastManager.Raycast(Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0)), s_Hits, TrackableType.PlaneWithinPolygon);
-                    Pose hitPose = s_Hits[0].pose;
-
-                    //Vector3 relativePos = Camera.main.transform.position - spawnedObject.transform.position;
-                    //Quaternion lookRotation = Quaternion.LookRotation(relativePos, Vector3.up);
-                    Debug.Log(hitPose.rotation);
-
+                    Debug.Log("Spawning prefab for the Horizontal plane.");
                     spawnedObject = Instantiate(m_PlacedPrefab, hitPose.position, hitPose.rotation);
-                    
-                    m_NumberOfPlacedObjects++;
-                    spawnedPreview.SetActive(false);
-
-                    if (onPlacedObject != null)
-                    {
-                        onPlacedObject();
-                    }
                 }
 
-                if (m_CanReposition && m_RaycastManager.Raycast(touch.position, s_Hits, TrackableType.PlaneWithinPolygon))
+                if (plane.alignment.IsVertical())
                 {
-                    Pose hitPose = s_Hits[0].pose;
-                    spawnedObject.transform.SetPositionAndRotation(hitPose.position, hitPose.rotation);
+                    Debug.Log("Spawning prefab for the Vertical plane.");
+                    spawnedObject = Instantiate(m_PlacedPrefab, hitPose.position, hitPose.rotation);
                 }
+
+                m_NumberOfPlacedObjects++;
+                spawnedPreview.SetActive(false);
+
+                if (onPlacedObject != null)
+                {
+                    onPlacedObject();
+                }
+            }
+
+            if (m_CanReposition && m_RaycastManager.Raycast(touch.position, s_Hits, TrackableType.PlaneWithinPolygon))
+            {
+                Pose hitPose = s_Hits[0].pose;
+                spawnedObject.transform.SetPositionAndRotation(hitPose.position, hitPose.rotation);
             }
         }
     }

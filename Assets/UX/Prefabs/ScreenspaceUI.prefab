@@ -919,7 +919,6 @@ GameObject:
   - component: {fileID: 5977163238016480456}
   - component: {fileID: 5977163238016480458}
   - component: {fileID: 1582620437}
-  - component: {fileID: 5977163237366113879}
   m_Layer: 0
   m_Name: ScreenspaceUI
   m_TagString: Untagged
@@ -967,7 +966,7 @@ MonoBehaviour:
   m_FadeOnDuration: 0.5
   m_FadeOffDuration: 1
   m_Transparent: {fileID: 2800000, guid: 6b52c83794be64e65bf826666f5a7f7d, type: 3}
-  m_LocalizationManager: {fileID: 5977163237366113879}
+  m_LocalizationManager: {fileID: 0}
   m_LocalizeText: 0
 --- !u!114 &5977163238016480458
 MonoBehaviour:
@@ -995,7 +994,7 @@ MonoBehaviour:
   m_ImageManager: {fileID: 0}
   m_ObjectManager: {fileID: 0}
   m_AnimationManager: {fileID: 5977163238016480456}
-  m_LocalizationManager: {fileID: 5977163237366113879}
+  m_LocalizationManager: {fileID: 0}
 --- !u!114 &1582620437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1020,37 +1019,5 @@ MonoBehaviour:
   m_UnsupportedSprite: {fileID: 21300000, guid: 4d8cf40a306c8483cb6d79cd26daf44a,
     type: 3}
   m_NoneSprite: {fileID: 21300000, guid: 29fc805acb69f4d7b84b4b57f58676b7, type: 3}
-  m_LocalizationManager: {fileID: 5977163237366113879}
+  m_LocalizationManager: {fileID: 0}
   m_LocalizeText: 0
---- !u!114 &5977163237366113879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5977163238016480453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c6f51f6bfbde451a92c25e3a2a6792b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CurrentLocalizedLanguage: 2
-  localizedInit: 
-  localizedMotion: 
-  localizedLight: 
-  localizedFeatures: 
-  localizedUnsupported: 
-  localizedNone: 
-  localizedMoveDevice: 
-  localizedTapToPlace: 
-  localizedBody: 
-  localizedFace: 
-  localizedImage: 
-  localizedObject: 
-  m_SimplifiedChineseFont: {fileID: 11400000, guid: 64af28ea8713946898d211a2c9632b53,
-    type: 2}
-  m_JapaneseFont: {fileID: 11400000, guid: 64338df9efb4345d0a24597a8d3233ba, type: 2}
-  m_KoreanFont: {fileID: 11400000, guid: 829cdce4ed81e4e639f139d85fa8443c, type: 2}
-  m_HindiFont: {fileID: 11400000, guid: bc5b90a90e9fe4263aa14c32d1ee9382, type: 2}
-  m_InstructionText: {fileID: 5977163236686653921}
-  m_ReasonText: {fileID: 249903488}
