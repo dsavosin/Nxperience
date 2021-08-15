@@ -148,6 +148,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.DenisSavosin.Nxperience
+    Standalone: com.DenisSavosin.Nxperience
     iPhone: com.DenisSavosin.Nxperience
   buildNumber:
     Standalone: 0
@@ -568,7 +569,7 @@ PlayerSettings:
   enableInternalProfiler: 0
   logObjCUncaughtExceptions: 1
   enableCrashReportAPI: 0
-  cameraUsageDescription: Allow Camera for AR
+  cameraUsageDescription: ALLOW CAMERA USE FOR AR
   locationUsageDescription: 
   microphoneUsageDescription: 
   switchNMETAOverride: 
