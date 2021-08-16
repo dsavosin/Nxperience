@@ -61,6 +61,8 @@ public class PlaceObjectsOnPlane : MonoBehaviour
     [SerializeField]
     bool m_CanReposition = true;
 
+    private Camera m_ARCamera;
+    
     public bool canReposition
     {
         get => m_CanReposition;
@@ -72,6 +74,7 @@ public class PlaceObjectsOnPlane : MonoBehaviour
         m_RaycastManager = GetComponent<ARRaycastManager>();
         m_PlaneManager = GetComponent<ARPlaneManager>();
         placedPrefab = PersistantClass.artworkARPrefab;
+        m_ARCamera = Camera.main;
         Debug.Log(placedPrefab.name);
     }
 
@@ -84,9 +87,13 @@ public class PlaceObjectsOnPlane : MonoBehaviour
     {
         if (spawnedObject == null)
         {
-            m_RaycastManager.Raycast(Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0)), s_Hits, TrackableType.PlaneWithinPolygon);
-            Pose hitPose = s_Hits[0].pose;
+            m_RaycastManager.Raycast(m_ARCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0)), s_Hits, TrackableType.PlaneWithinPolygon);
+            if (s_Hits.Count == 0)
+            {
+                return;
+            }
 
+            Pose hitPose = s_Hits[0].pose;
             if ( spawnedPreview == null )
             {
                 spawnedPreview = Instantiate(m_PreviewPrefab, hitPose.position, hitPose.rotation);
@@ -96,7 +103,7 @@ public class PlaceObjectsOnPlane : MonoBehaviour
                 spawnedPreview.transform.SetPositionAndRotation(hitPose.position, hitPose.rotation);
             }
         }
-
+        
         if (Input.touchCount == 0)
         {
             return;
@@ -107,11 +114,13 @@ public class PlaceObjectsOnPlane : MonoBehaviour
         {
             if (m_NumberOfPlacedObjects < m_MaxNumberOfObjectsToPlace)
             {
-                m_RaycastManager.Raycast(Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0)), s_Hits, TrackableType.PlaneWithinPolygon);
+                m_RaycastManager.Raycast(
+                    m_ARCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0)), s_Hits,
+                    TrackableType.PlaneWithinPolygon);
                 Pose hitPose = s_Hits[0].pose;
                 ARPlane plane = m_PlaneManager.GetPlane(s_Hits[0].trackableId);
-                
-                if(plane.alignment.IsHorizontal())
+
+                if (plane.alignment.IsHorizontal())
                 {
                     Debug.Log("Spawning prefab for the Horizontal plane.");
                     spawnedObject = Instantiate(m_PlacedPrefab, hitPose.position, hitPose.rotation);

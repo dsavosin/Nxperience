@@ -388,7 +388,13 @@ public class UIManager : MonoBehaviour
 
     public void LoadMainMenuLevel()
     {
-        SceneManager.LoadScene("Menu");
+        if (m_PlaneManager)
+        {
+            m_PlaneManager.SetTrackablesActive(false);
+            m_PlaneManager.enabled = false;
+        }
+
+        SceneManager.LoadScene("Menu", LoadSceneMode.Single);
     }
 }
 

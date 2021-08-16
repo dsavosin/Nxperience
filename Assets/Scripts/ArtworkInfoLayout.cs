@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -144,12 +145,12 @@ public class ArtworkInfoLayout : MonoBehaviour
     {
         PersistantClass.testString = "Loaded Artwork in AR";
         PersistantClass.artworkARPrefab = m_artworkItem.placedARPrefab;
-        SceneManager.LoadScene("UXManagerScene");
+        SceneManager.LoadScene("UXManagerScene", LoadSceneMode.Single);
     }
 
     public void LaunchOnSiteAR()
     {
-        SceneManager.LoadScene("ImageTracking");
+        SceneManager.LoadScene("ImageTracking", LoadSceneMode.Single);
     }
 
     private void OnValidate()
@@ -182,5 +183,21 @@ public class ArtworkInfoLayout : MonoBehaviour
             resetSizeDelta = m_rectTransform.sizeDelta;
             resetLocalPosition = m_rectTransform.localPosition;
         }
+    }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Debug.Log("OnSceneLoaded: " + scene.name);
+        Debug.Log(mode);
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }
