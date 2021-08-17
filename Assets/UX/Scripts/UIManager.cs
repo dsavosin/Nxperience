@@ -178,6 +178,12 @@ public class UIManager : MonoBehaviour
     
     void OnEnable()
     {
+        ARSession arSession = m_ARSessionOrigin.GetComponent<ARSession>();
+        if (arSession)
+        {
+            arSession.Reset();
+        }
+        
         ARUXAnimationManager.onFadeOffComplete += FadeComplete;
 
         PlaceObjectsOnPlane.onPlacedObject += () => m_PlacedObject = true;
@@ -394,6 +400,12 @@ public class UIManager : MonoBehaviour
             m_PlaneManager.enabled = false;
         }
 
+        ARSession arSession = m_ARSessionOrigin.GetComponent<ARSession>();
+        if (arSession)
+        {
+            arSession.Reset();
+        }
+        
         SceneManager.LoadScene("Menu", LoadSceneMode.Single);
     }
 }
