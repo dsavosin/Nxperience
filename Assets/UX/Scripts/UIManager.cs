@@ -107,6 +107,15 @@ public class UIManager : MonoBehaviour
     }
 
     [SerializeField]
+    GameObject m_ARSession;
+
+    public GameObject arSession
+    {
+        get => m_ARSession;
+        set => m_ARSession = value;
+    }
+
+    [SerializeField]
     GameObject m_ARSessionOrigin;
 
     public GameObject arSessionOrigin
@@ -177,13 +186,7 @@ public class UIManager : MonoBehaviour
     bool m_FadedOff = false;
     
     void OnEnable()
-    {
-        ARSession arSession = m_ARSessionOrigin.GetComponent<ARSession>();
-        if (arSession)
-        {
-            arSession.Reset();
-        }
-        
+    {        
         ARUXAnimationManager.onFadeOffComplete += FadeComplete;
 
         PlaceObjectsOnPlane.onPlacedObject += () => m_PlacedObject = true;
@@ -400,10 +403,13 @@ public class UIManager : MonoBehaviour
             m_PlaneManager.enabled = false;
         }
 
-        ARSession arSession = m_ARSessionOrigin.GetComponent<ARSession>();
         if (arSession)
         {
-            arSession.Reset();
+            arSession.GetComponent<ARSession>().Reset();
+        }
+        else
+        {
+            Debug.LogAssertion("AR Session object not found.", arSession);
         }
         
         SceneManager.LoadScene("Menu", LoadSceneMode.Single);
