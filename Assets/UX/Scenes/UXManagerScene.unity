@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 4890085278179872738, guid: cb60e3eb7bff043ae874b566c7c005f1,
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 4277a99aa0eb2524391b7592d335a2cd,
     type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -390,8 +390,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1015722067}
   - component: {fileID: 1015722066}
-  - component: {fileID: 1015722068}
   - component: {fileID: 1015722069}
+  - component: {fileID: 1015722068}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -703,6 +703,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 249903488, guid: 29251f2f7c5044cce8e7eb862b4d93ef, type: 3}
+      propertyPath: m_text
+      value: Looking for walls or a floor in the area.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5977163236686653921, guid: 29251f2f7c5044cce8e7eb862b4d93ef,
+        type: 3}
+      propertyPath: m_text
+      value: Tap to place artowork preview
+      objectReference: {fileID: 0}
     - target: {fileID: 5977163237856183996, guid: 29251f2f7c5044cce8e7eb862b4d93ef,
         type: 3}
       propertyPath: m_RenderMode

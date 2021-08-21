@@ -40,13 +40,18 @@ PrefabInstance:
     - target: {fileID: 2535666735285025691, guid: a66a2a238286a2e489398ac24a9c8fef,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6461232848698720952, guid: a66a2a238286a2e489398ac24a9c8fef,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: fc91b978528b99c4d834cb28164a0a61, type: 2}
+    - target: {fileID: 6569732777226908440, guid: a66a2a238286a2e489398ac24a9c8fef,
+        type: 3}
+      propertyPath: m_FrameRootOffset
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8590947110017181542, guid: a66a2a238286a2e489398ac24a9c8fef,
         type: 3}
       propertyPath: m_RootOrder

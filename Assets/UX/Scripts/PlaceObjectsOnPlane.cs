@@ -122,14 +122,28 @@ public class PlaceObjectsOnPlane : MonoBehaviour
 
                 if (plane.alignment.IsHorizontal())
                 {
-                    Debug.Log("Spawning prefab for the Horizontal plane.");
                     spawnedObject = Instantiate(m_PlacedPrefab, hitPose.position, hitPose.rotation);
+                    spawnedObject.GetComponent<RotateTowardsCamera>().ApplyFrameRootOffset();
+                    spawnedObject.GetComponent<RotateTowardsCamera>().SetShadowPlaneEnabled(true);
+                    spawnedObject.GetComponent<RotateTowardsCamera>().allowLookAt = true;
                 }
 
                 if (plane.alignment.IsVertical())
                 {
-                    Debug.Log("Spawning prefab for the Vertical plane.");
                     spawnedObject = Instantiate(m_PlacedPrefab, hitPose.position, hitPose.rotation);
+
+                    RotateTowardsCamera spawnedArtworkComp = spawnedObject.GetComponent<RotateTowardsCamera>();
+                    if( spawnedArtworkComp )
+                    {
+                        spawnedArtworkComp.SetShadowPlaneEnabled(false);
+                        spawnedArtworkComp.allowLookAt = false;
+                    }
+
+                    Vector3 targetTransform = Camera.main.transform.position - spawnedObject.transform.position;
+                    Vector3 Euler = Quaternion.LookRotation(targetTransform, Camera.main.transform.up).eulerAngles;
+                    Euler.x = 0.0f;
+                    Euler.z = 0.0f;
+                    spawnedObject.transform.rotation = Quaternion.Euler(Euler);
                 }
 
                 m_NumberOfPlacedObjects++;
@@ -139,12 +153,6 @@ public class PlaceObjectsOnPlane : MonoBehaviour
                 {
                     onPlacedObject();
                 }
-            }
-
-            if (m_CanReposition && m_RaycastManager.Raycast(touch.position, s_Hits, TrackableType.PlaneWithinPolygon))
-            {
-                Pose hitPose = s_Hits[0].pose;
-                spawnedObject.transform.SetPositionAndRotation(hitPose.position, hitPose.rotation);
             }
         }
     }
