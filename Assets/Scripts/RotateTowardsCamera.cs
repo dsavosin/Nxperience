@@ -17,14 +17,14 @@ public class RotateTowardsCamera : MonoBehaviour
     }
 
     [SerializeField]
-    GameObject ShadowPlane;
+    GameObject ShadowPlaneHorizontal;
 
     [SerializeField]
     GameObject FrameRoot;
 
     public void SetShadowPlaneEnabled(bool enabled)
     {
-        ShadowPlane.SetActive(enabled);
+        ShadowPlaneHorizontal.SetActive(enabled);
     }
 
     public void ApplyFrameRootOffset()

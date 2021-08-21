@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 564523142285199468}
   - component: {fileID: 1002868833095744224}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: PlaneHorizontal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -336,7 +336,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d0d73e4757260d4d9f4bcd868d322ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FrameRootOffset: 1
+  m_FrameRootOffset: 0.8
   m_AllowLookAt: 0
-  ShadowPlane: {fileID: 6173672583998091271}
+  ShadowPlaneHorizontal: {fileID: 6173672583998091271}
+  ShadowPlaneVertical: {fileID: 0}
   FrameRoot: {fileID: 8177356435897407299}

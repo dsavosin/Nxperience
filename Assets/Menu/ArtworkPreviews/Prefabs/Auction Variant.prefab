@@ -98,7 +98,12 @@ PrefabInstance:
     - target: {fileID: 6569732777226908440, guid: a66a2a238286a2e489398ac24a9c8fef,
         type: 3}
       propertyPath: m_FrameRootOffset
-      value: 0.3
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8166424434422891364, guid: a66a2a238286a2e489398ac24a9c8fef,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.51
       objectReference: {fileID: 0}
     - target: {fileID: 8590947109377212090, guid: a66a2a238286a2e489398ac24a9c8fef,
         type: 3}
